@@ -1,175 +1,206 @@
-# Python-Style-Guide
+# Python Style Guide
+It's important to follow good variable naming conventions and style guidelines (outlined in a document called the [Python Enhancement Proposal 8](https://pep8.org/), or PEP8). This helps us write clean, readable, and maintainable code. 
 
-Certainly! Here's a summary based on PEP8 covering key topics for code style:
+Here is a summary of style guidelines expected of you in this class.
 
-Comment Header:
-Begin each Python file with a comment header to describe its purpose, author, and other relevant information.
-python
-Copy code
-# Filename: my_program.py
-# Author: John Doe
-# Date: February 23, 2024
-# Description: This program demonstrates Python code style conventions.
-Variable Naming Rules and Convention:
-Use descriptive names that convey the purpose of the variable.
-Use lowercase letters with words separated by underscores for readability.
-Avoid using single character variable names unless for iterators.
-python
-Copy code
-my_variable = 42
-user_name = "John"
-Comment:
-Use comments to explain complex code, provide context, or clarify intentions.
-Write clear and concise comments. Avoid redundant or excessive comments.
-python
-Copy code
-# Calculate the area of a rectangle
-area = length * width  # Length times width gives the area
-Indentation:
-Indent using 4 spaces for each level of indentation.
-Be consistent with indentation throughout the codebase.
-python
-Copy code
-def my_function():
-    if condition:
-        statement
-    else:
-        statement
-Whitespace:
-Use whitespace to improve code readability.
-Separate logical paragraphs of code with blank lines.
-Surround operators and commas with whitespace for clarity.
-Avoid whitespace immediately inside parentheses, brackets, or braces.
-python
-Copy code
-# Good
-result = function(argument1, argument2)
+## Whitespace
+- Use whitespace to improve code readability.
+- Separate logical paragraphs of code with blank lines.
+- Surround operators and commas with whitespace for clarity.
+- Avoid whitespace immediately inside parentheses, bracks, or braces.
 
-# Bad
-result = function( argument1 , argument2 )
-Docstrings:
-Use docstrings to document functions, classes, and modules.
-Write docstrings in triple quotes (""") immediately after the declaration.
-Follow the NumPy/Google style guide for docstrings.
-python
-Copy code
-def my_function(param1, param2):
-    """Summarize the function's purpose in one line.
+### Example: Separate logical paragraphs of code with blank lines
+#### Good
+```python
+# Ask the user for input
+group_size = input("How many people in your group? ")
+aftertax_total = input("What was the total bill after tax? ")
+tip_percentage = input("How much do you want to tip (standard is 15%)? ")
 
-    More detailed description, including parameters and return value (if any).
+# Calculate pre-tax total by backing out HST from after-tax total
+pretax_total = float(aftertax_total) / 1.13
 
-    Args:
-        param1 (int): Description of param1.
-        param2 (str): Description of param2.
+# Calculate desired tip based on pre-tax total
+tip_total = pretax_total * (float(tip_percentage) / 100)
+```
 
-    Returns:
-        bool: Description of return value.
-    """
-    # Function body here
-By adhering to these guidelines, you can write Python code that is not only functional but also clear, readable, and maintainable.
-User
-Give good and bad code examples for each bullet point above
+#### Bad
+```python
+group_size = input("How many people in your group? ")
+aftertax_total = input("What was the total bill after tax? ")
+tip_percentage = input("How much do you want to tip (standard is 15%)? ")
+pretax_total = float(aftertax_total) / 1.13
+tip_total = pretax_total * (float(tip_percentage) / 100)
+```
 
-ChatGPT
-Sure, here are examples illustrating good and bad practices for each bullet point:
+### Example: Surround operators and commas with whitespace for clarity
+#### Good
+```python
+total_price = float((item1 + item2 + item3) * 1.13)
+print("You Pay", total_price)
+```
+#### Bad
+```python
+total_price=float((item1+item2+item3)*1.13)
+print("You Pay",total_price)
+```
 
-Comment Header:
-Good:
+### Example: Avoid whitespace immediately inside parentheses, bracks, or braces
+#### Good
+```python
+total_price = float((item1 + item2 + item3) * 1.13)
+```
 
-python
-Copy code
-# Filename: my_program.py
-# Author: John Doe
-# Date: February 23, 2024
-# Description: This program demonstrates Python code style conventions.
-Bad:
+#### Bad
+```python
+total_price = float ( ( item1 + item2 + item3 ) * 1.13 )
+```
 
-python
-Copy code
-# Program
-# John Doe
-# 02/23/24
-# Python code
-Variable Naming Rules and Convention:
-Good:
+## Indentation
+- Indent using 4 spaces for each level of indentation.
+- Be consisten with indentation throughout the codebase.
 
-python
-Copy code
-total_price = 100
-customer_name = "Alice"
-Bad:
 
-python
-Copy code
-tp = 100
-cn = "Alice"
-Comment:
-Good:
+## Variables
+- Choose variable names that are meaningful and describe their purpose or content.
+- Use lowercase letters with underscores for multi-word names (i.e. snake_case).
+- Avoid using reserved words.
+- Maintain consistent naming conventions throughout your codebase.
+- Use meaningful prefixes for variable names in specific contexts. For example, if there are multiple variables that store a student's grade, you can distinguish them with `num_grade` (e.g. 97) and `str_grade` (e.g. A, B, C, D)
 
-python
-Copy code
-# Calculate the area of a rectangle
-area = length * width  # Length times width gives the area
-Bad:
 
-python
-Copy code
-# This calculates area
-area = l * w  # l * w
-Indentation:
-Good:
+### Example: Use descriptive names
+Choose variable names that are meaningful and describe their purpose or content. Avoid single-letter variable names except for loop indices or other very short-lived variables.
 
-python
-Copy code
-def my_function():
-    if condition:
-        statement
-    else:
-        statement
-Bad:
+#### Good
+```python
+name = "John"
+num_students = 10
+```
 
-python
-Copy code
-def my_function():
-        if condition:
-                statement
-        else:
-                statement
-Whitespace:
-Good:
+#### Bad
+```python
+n = "John"
+x = 10
+```
 
-python
-Copy code
-result = function(arg1, arg2)
-Bad:
+### Example: Use lowercase letters with underscores for multi-word names (i.e. snake_case)
+Use underscores (_) to separate words in variable names for better readability.
+#### Good
+```python
+max_speed = 100
+user_name = "example"
+```
 
-python
-Copy code
-result=function(arg1,arg2)
-Docstrings:
-Good:
+#### Bad
+```python
+MaxSpeed = 100
+userName = "example"
+```
 
-python
-Copy code
-def my_function(param1, param2):
-    """Summarize the function's purpose in one line.
+### Example: Avoid using reserved words
+Do not use special or reserved words as variable names.
 
-    More detailed description, including parameters and return value (if any).
+#### Bad - 'class' is a reserved word
+```python
+class = "example"
+```
 
-    Args:
-        param1 (int): Description of param1.
-        param2 (str): Description of param2.
+### Example: Be consistent
+Maintain consistent naming conventions throughout your codebase.
 
-    Returns:
-        bool: Description of return value.
-    """
-    # Function body here
-Bad:
+#### Good
+```python
+max_speed = 100
+min_speed = 50
+```
 
-python
-Copy code
-def my_function(param1, param2):
-    # This function does something
-    # param1: integer, param2: string
-    return True
-These examples illustrate the importance of adhering to Python code style conventions for readability and maintainability.
+#### Bad
+```python
+maxSpeed = 100
+min_speed = 50
+```
+
+### Example: Use meaningful prefixes for variable names in specific contexts
+Use prefixes such as "is_" for Boolean variables, "num_" for counts or number variables, and "str_" for string variables.
+
+#### Good
+```python
+is_valid = True
+str_grade = "A"
+num_grade = "97
+```
+
+#### Bad
+```
+valid = True
+grade = "A"
+grade2 = "97
+```
+
+### Avoid magic numbers
+Assign numbers to variables with descriptive names instead of using them directly in your code.
+
+#### Good
+```python
+max_speed = 100
+acceleration = 9.8
+```
+
+#### Bad
+```
+distance = time * 9.8
+```
+
+## Comments
+- **Clarity Over Comments**: Strive to write clear and understandable code. Use comments only when necessary to explain complex logic or provide additional context.
+- **Avoid Verbosity**: Ensure that you don't have *too many comments*. Code that is too verbose or wordy can take away from readability and clarity.
+- **Consistency**: Follow consistent commenting conventions throughout your codebase to improve readability and maintainability.
+
+### Single-Line Comments
+- Use single-line comments to provide short explanations, notes, or context for specific lines of code.
+- Use single-line comments to clarify complex or non-obvious code.
+- Place comments *above* the line they describe for clarity.
+
+#### Good
+```python
+# Convert Celsius to Fahrenheit
+fahrenheit = (celsius * 9/5) + 32
+```
+#### Bad
+Avoid simply replicating code in comments, which can lead to redundancy and confusion:
+
+```python
+num_a = 10  # num_a is 10
+num_b = 20  # num_b is 20
+
+# result is num_a + num_b
+result = num_a + num_b
+
+# print result
+print("Result:", result)
+```
+
+### Multi-Line Comments
+Use multi-line comments to provide detailed documentation about purpose, usage, inputs, outputs, and behavior of entire programs, functions, modules, etc. 
+
+#### Good: Program Header
+Begin each Python file with a multi-line comment acting as a program header to describe what the program does.
+
+```python
+"""
+File: celsius.py
+Author: Dave Cheng
+Date: 2024-02-21
+Description: Converts temperture from Celsius to Fahrenheit.
+"""
+
+# Get Celsius temperature from user
+temp_celsius = float(input("Enter temperature in Celsius: "))
+
+# Convert Celsius to Fahrenheit
+temp_fahrenheit = (celsius * 9/5) + 32
+
+# Output result
+print("Temperature in Fahrenheit:", temp_fahrenheit)
+```
