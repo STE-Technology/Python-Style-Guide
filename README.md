@@ -101,7 +101,7 @@ userName = "example"
 ### Example: Avoid using reserved words
 Do not use special or reserved words as variable names.
 
-#### Bad - 'class' is a reserved word
+#### Bad: 'class' is a reserved word
 ```python
 class = "example"
 ```
