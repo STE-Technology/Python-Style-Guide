@@ -218,13 +218,6 @@ literals.
 Lines contained by parentheses can use line continuation without the need for a special character.
 For example, look at this variable assignment statement with simple arithmetic:
 
-#### Bad
-```python
-total = (value1 * factor1 + value2 + factor2 + value3 + factor3 + value4 * factor4 + value5 * factor5)
-```
-
-It is easier to understand written as:
-
 #### Good
 ```python
 total = (value1 * factor1 + 
@@ -232,6 +225,13 @@ total = (value1 * factor1 +
          value3 + factor3 + 
          value4 * factor4 + 
          value5 * factor5)
+```
+
+Much easier to understand than:
+
+#### Bad
+```python
+total = (value1 * factor1 + value2 + factor2 + value3 + factor3 + value4 * factor4 + value5 * factor5)
 ```
 
 ### Using backslash
