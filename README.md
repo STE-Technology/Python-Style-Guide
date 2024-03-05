@@ -215,6 +215,16 @@ parentheses (e.g. arithmetic operations) or with the `\` ("backslash") escape ch
 literals. 
 
 ### Using parentheses
+Lines contained by parentheses can use line continuation without the need for a special character.
+For example, look at this variable assignment statement with simple arithmetic:
+
+#### Bad
+```python
+total = (value1 * factor1 + value2 + factor2 + value3 + factor3 + value4 * factor4 + value5 * factor5)
+```
+
+It is easier to understand written as:
+
 #### Good
 ```python
 total = (value1 * factor1 + 
@@ -224,13 +234,9 @@ total = (value1 * factor1 +
          value5 * factor5)
 ```
 
-#### Bad
-```python
-total = (value1 * factor1 + value2 + factor2 + value3 + factor3 + value4 * factor4 + value5 * factor5)
-```
-
 ### Using backslash
-You can also use `\` in string literals, such as a `print()` statement:
+The backslash `\` character can also be used for an implicit line continuation. This is especially 
+important in string literals, such as a `print()` statement:
 
 #### Good
 ```python
