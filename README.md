@@ -221,8 +221,8 @@ For example, look at this variable assignment statement with simple arithmetic:
 #### Good
 ```python
 total = (value1 * factor1 + 
-         value2 + factor2 + 
-         value3 + factor3 + 
+         value2 * factor2 + 
+         value3 * factor3 + 
          value4 * factor4 + 
          value5 * factor5)
 ```
@@ -231,7 +231,7 @@ Much easier to understand than:
 
 #### Bad
 ```python
-total = (value1 * factor1 + value2 + factor2 + value3 + factor3 + value4 * factor4 + value5 * factor5)
+total = (value1 * factor1 + value2 * factor2 + value3 * factor3 + value4 * factor4 + value5 * factor5)
 ```
 
 ### Using backslash
