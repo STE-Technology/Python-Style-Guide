@@ -214,7 +214,8 @@ single line of code across multiple lines using **line continuation**. This can 
 parentheses (e.g. arithmetic operations) or with the `\` ("backslash") escape character in string \
 literals. 
 
-#### Good: Using parentheses for line continuation
+### Using parentheses
+#### Good
 ```python
 total = (value1 * factor1 + 
          value2 + factor2 + 
@@ -223,11 +224,12 @@ total = (value1 * factor1 +
          value5 * factor5)
 ```
 
-#### Bad: Long lines of code
+#### Bad
 ```python
 total = (value1 * factor1 + value2 + factor2 + value3 + factor3 + value4 * factor4 + value5 * factor5)
 ```
 
+### Using backslash
 You can also use `\` in string literals, such as a `print()` statement:
 
 #### Good
