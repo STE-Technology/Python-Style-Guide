@@ -58,7 +58,7 @@ total_price = float ( ( item1 + item2 + item3 ) * 1.13 )
 
 ## Indentation
 - Indent using 4 spaces for each level of indentation.
-- Be consisten with indentation throughout the codebase.
+- Be consistent with indentation throughout the codebase.
 
 
 ## Variables
