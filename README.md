@@ -204,3 +204,41 @@ temp_fahrenheit = (celsius * 9/5) + 32
 # Output result
 print("Temperature in Fahrenheit:", temp_fahrenheit)
 ```
+
+## Long Lines of Code
+In general, you do not want a line of code to exceed the width of an average screen — about 80 characters. \
+Keep code to a screen width promotes readability. 
+
+In cases you have to write a long line of code, or just to promopte readability in general, you can break a \
+single line of code across multiple lines using **line continuation**. This can be done with code in \
+parentheses (e.g. arithmetic operations) or with the `\` ("backslash") escape character in string \
+literals. 
+
+#### Good: Using parentheses for line continuation
+```python
+total = (value1 * factor1 + 
+         value2 + factor2 + 
+         value3 + factor3 + 
+         value4 * factor4 + 
+         value5 * factor5)
+```
+
+#### Bad: Long lines of code
+```python
+total = (value1 * factor1 + value2 + factor2 + value3 + factor3 + value4 * factor4 + value5 * factor5)
+```
+
+You can also use `\` in string literals, such as a `print()` statement:
+
+#### Good
+```python
+print("What is the answer? \
+      \n(a) Choice \
+      \n(b) Choice \
+      \n(C) Choice")
+```
+
+#### Bad
+```python
+print("What is the answer?\n(a) Choice\n(b) Choice\n(c) Choice")
+```
