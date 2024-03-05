@@ -235,7 +235,7 @@ total = (value1 * factor1 + value2 * factor2 + value3 * factor3 + value4 * facto
 ```
 
 ### Using backslash
-The backslash `\` character can also be used for an implicit line continuation. This is especially 
+The backslash `\` character can also be used for an explicit line continuation. This is especially 
 important in string literals, such as a `print()` statement:
 
 #### Good
